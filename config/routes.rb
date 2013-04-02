@@ -1,4 +1,12 @@
 SampleApp::Application.routes.draw do
+  get "static_pages/home" ### maps the url to the "home" action in the static_pages_controller
+                          ### this route responds to a GET request
+                          ### this means that when we generate a "home" action inside static_pages_controller we automatically get a page at the address /static_pages/home
+
+  get "static_pages/help" ### maps the url to the "help" action in the static_pages_controller
+                          ### this route responds to a GET request
+                          ### this means that when we generate a "home" action inside static_pages_controller we automatically get a page at the address /static_pages/home
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
