@@ -7,6 +7,8 @@ SampleApp::Application.routes.draw do
                           ### this route responds to a GET request
                           ### this means that when we generate a "home" action inside static_pages_controller we automatically get a page at the address /static_pages/home
 
+  get "static_pages/about"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
