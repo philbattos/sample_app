@@ -1,15 +1,28 @@
 SampleApp::Application.routes.draw do
-  get "static_pages/home" ### maps the url to the "home" action in the static_pages_controller
+
+  # get "users/new"
+
+  root to: 'static_pages#home'
+
+  # get "static_pages/home" ### maps the url to the "home" action in the static_pages_controller
                           ### this route responds to a GET request
                           ### this means that when we generate a "home" action inside static_pages_controller we automatically get a page at the address /static_pages/home
 
-  get "static_pages/help" ### maps the url to the "help" action in the static_pages_controller
+  # get "static_pages/help" ### maps the url to the "help" action in the static_pages_controller
                           ### this route responds to a GET request
                           ### this means that when we generate a "home" action inside static_pages_controller we automatically get a page at the address /static_pages/home
+  match '/help',    to: 'static_pages#help'
 
-  get "static_pages/about"
+  # get "static_pages/about"
+  match '/about',   to: 'static_pages#about' ### arranges for a valid page at /help and a named route called help_path that returns the path to that page
+    # "get" could be used in place of "match" but "match" is more conventional
 
-  get "static_pages/contact"
+  # get "static_pages/contact"
+  match '/contact', to: 'static_pages#contact'
+
+  match '/signup',  to: 'users#new'
+
+  # "about_url" = http://example.com/about (returns full url instead of "about_path")
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
